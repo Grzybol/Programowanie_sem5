@@ -102,6 +102,7 @@ public class Main {
         System.out.println("Naciśnij Enter, aby kontynuować...");
         scanner.nextLine();
 
+
     }
 
     public static void dateInfo(Scanner scanner) {
