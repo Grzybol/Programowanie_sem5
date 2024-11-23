@@ -10,11 +10,11 @@ import java.time.YearMonth;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             displayMenu();
-
+            //1 test
             String input = scanner.nextLine();
             String[] parts = input.split(" ");
 
@@ -44,6 +44,17 @@ public class Main {
                         checkMagicSquare(scanner);
                         System.out.println();
                         break;
+                    case 6:
+                        System.out.println("Wprowadz liczbe wieksza niz 10");
+                        if(parts[1].matches("\\d+")) {
+                            if(zadanieDlaMadzi(Integer.parseInt(parts[1]))){
+                                System.out.println("Wprowadzona liczba jest wieksza niz 10!");
+                            }else{
+                                System.out.println("Wprowadzona liczba jest mniejsza niz 10!!!!");
+                            }
+                        }else{
+                            System.out.println("wprowadz liczbe nie tekst!");
+                        }
                     case 0:
                         scanner.close();
                         return;
@@ -57,13 +68,14 @@ public class Main {
 
         }
     }
-    private static void displayMenu() {
+    private void displayMenu() {
         System.out.println("Wybierz opcję (1-5) lub 0 aby zakończyć:");
         System.out.println("1: Witaj świecie / Witaj użytkowniku");
         System.out.println("2: Konwersja temperatur");
         System.out.println("3: Informacje o dacie");
         System.out.println("4: Logowanie użytkownika");
         System.out.println("5: Sprawdzenie macierzy magicznej");
+        System.out.println("6: Zadanie dla Madzi <3");
     }
 
     public static void helloUser(String name) {
@@ -200,4 +212,12 @@ public class Main {
         return true;
     }
 
+    private static boolean zadanieDlaMadzi(int liczbaOdFilipa){
+        if(liczbaOdFilipa>10){
+            return true;
+
+        }else{
+            return false;
+        }
+    }
 }
